@@ -46,21 +46,22 @@ void A(int arr[SIZE][SIZE]) {
 }
 
 void B(int i, int j) {
-    printf("\n");
     if (matrix[i][j] == MAXVALUE || matrix[i][j] == 0) {
         printf("False");
     } else {
         printf("True");
     }
+    printf("\n");
 }
 
 void C(int i, int j) {
-    printf("\n");
+
     if (matrix[i][j] == 0 || matrix[i][j] == MAXVALUE) {
         printf("-1");
     } else {
         printf("%d", matrix[i][j]);
     }
+    printf("\n");
 }
 void D(){
     exit(True);
