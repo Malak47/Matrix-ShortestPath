@@ -2,19 +2,19 @@ CC = gcc
 AR = ar
 FLAGS = -Wall -g
 
-all: my_mat.so connections
+all: connections
 
-my_mat.so: my_mat.o
-	$(CC) -shared -o my_mat.so my_mat.o
+connections: main.o mat.a
+	${CC} ${FLAGS} -o connections main.o mat.a
+
+mat.a: my_mat.o
+	${AR} -rcs mat.a my_mat.o
+	
+main.o: main.c my_mat.h
+	${CC} ${FLAGS} -c main.c
 
 my_mat.o: my_mat.h my_mat.c
-	$(CC) $(FLAGS) -c my_mat.c
-
-main.o: main.c my_mat.h
-	$(CC) $(FLAGS) -c main.c
-
-connections: main.o my_mat.so
-	$(CC) $(FLAGS) -o connections main.o ./my_mat.so
+	${CC} ${FLAGS} -c my_mat.c
 
 .PHONY: clean all
 
