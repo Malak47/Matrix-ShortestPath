@@ -40,6 +40,6 @@ int main() {
                 printf("Error: invalid input, Enter 'D' for exit.\n");
         }
     }
-    return True;
+    return 0;
 }
 
