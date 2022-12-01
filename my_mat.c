@@ -64,7 +64,7 @@ void C(int i, int j) {
     printf("\n");
 }
 void D(){
-    exit(True);
+    exit(0);
 }
 
 
